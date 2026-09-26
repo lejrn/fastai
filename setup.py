@@ -34,8 +34,8 @@ dev_requirements = (cfg.get('dev_requirements') or '').split()
 long_description = open('README.md', encoding='utf8').read()
 # ![png](docs/images/output_13_0.png)
 for ext in ['png', 'svg']:
-    long_description = re.sub(r'!\['+ext+'\]\((.*)\)', '!['+ext+']('+'https://raw.githubusercontent.com/{}/{}'.format(cfg['user'],cfg['lib_name'])+'/'+cfg['branch']+'/\\1)', long_description)
-    long_description = re.sub(r'src=\"(.*)\.'+ext+'\"', 'src=\"https://raw.githubusercontent.com/{}/{}'.format(cfg['user'],cfg['lib_name'])+'/'+cfg['branch']+'/\\1.'+ext+'\"', long_description)
+    long_description = re.sub(r'!\['+ext+r'\]\((.*)\)', '!['+ext+']('+'https://raw.githubusercontent.com/{}/{}'.format(cfg['user'],cfg['lib_name'])+'/'+cfg['branch']+r'/\1)', long_description)
+    long_description = re.sub(r'src=\"(.*)\.'+ext+r'\"', 'src=\"https://raw.githubusercontent.com/{}/{}'.format(cfg['user'],cfg['lib_name'])+'/'+cfg['branch']+r'/\1.'+ext+'\"', long_description)
 
 setuptools.setup(
     name = 'fastai',
